@@ -16,3 +16,7 @@ To build the framework follow the below steps:
 3. To run a single test, go to any test page > double click @Test > Run As > TestNGTest (e.g:'HerokuAppSampleTest\src\test\java\com\HerokuAppTests\LoginPageTest.java')
 4. To run all the tests, go to "HerokuAppSampleTest\src\main\resources\testng_regression.xml" > right click > Run As > TestNGSuite.
 
+# Reporting
+<side note: I included ExtentReports but this still needs to be configured to work>
+<TextNG Reporting>
+  1. to view the html reports for tests excute go to 'HerokuAppSampleTest\test-output\emailable-report.html' and click emailable-report.html
