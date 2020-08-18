@@ -29,13 +29,14 @@ public class TestBase {
 	public  static EventFiringWebDriver e_driver;
 	public static WebEventListener eventListener;
 	private static String chromeFilepath =System.getProperty("user.dir") + "\\src\\main\\java\\drivers\\chromedriver.exe";
+	private static String ffFilepath =System.getProperty("user.dir") + "\\src\\main\\java\\drivers\\geckodriver.exe";
 	private static String inputStreamFilePath =System.getProperty("user.dir") + "\\src\\main\\java\\config\\config.properties";
 	
 	
 	public TestBase(){
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream(inputStreamFilePath); // C:\\Users\\GirlGenius\\eclipse-workspace\\HerokuAppSampleTest\\src\\main\\java\\config\\config.properties 
+			FileInputStream ip = new FileInputStream(inputStreamFilePath); 
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -57,7 +58,7 @@ public class TestBase {
 			driver = new ChromeDriver(options); 
 		}
 		else if(browserName.equals("FF")){
-			System.setProperty("webdriver.gecko.driver", "");
+			System.setProperty("webdriver.gecko.driver", ffFilepath);
 			DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 			capabilities.setCapability("marionette",true);
 			driver = new FirefoxDriver(); 
